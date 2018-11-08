@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user/tax_details', 'AdminController@pay');
+Route::get('user/profile', 'UserController@file');
+
+//code for the images
+Route::post('user/profile','UserController@upload')->name('upload.doc')->middleware('auth');
+Route::get('user/profile', function(){
+    return view('user.profile');
+ }) -> middleware('auth');
