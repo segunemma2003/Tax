@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::post('/home/checklogin','HomeController@checklogin');
+Route::get('/home/sucesslogin', 'HomeController@successlogin');
+Route::get('home/logout', 'HomeController@logout');
 Route::get('/user/tax_details', 'AdminController@pay');
 Route::get('user/profile', 'UserController@file');
 
@@ -23,3 +29,5 @@ Route::post('user/profile','UserController@upload')->name('upload.doc')->middlew
 Route::get('user/profile', function(){
     return view('user.profile');
  }) -> middleware('auth');
+
+

@@ -15,9 +15,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [
-        'Company Name', 'Company Address', ' Company E-mail', 'Website', 'Bank Name', 'Account Number',
-         'Phone Number','Feedback', 'password',
+    protected $fillable = [
+        'name', 'email','company_name','company_address','phone_no', 'password',
     ];
     protected $table='users';
 
