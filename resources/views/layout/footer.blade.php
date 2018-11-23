@@ -18,13 +18,13 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
           -->
-          Designed by <a href="https://bootstrapmade.com/">Joy Joel</a>
+       
         </div>
       </div>
     </section>
     <!--main content end-->
   </section>
 
-<!-- container section start -->
+<!-- container section start
 
- 
+  -->

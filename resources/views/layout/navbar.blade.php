@@ -1,7 +1,7 @@
 <header class="header dark-bg">
-      <div class="toggle-nav">
+      <!-- <div class="toggle-nav">
         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-      </div>
+      </div> -->
 
       <!--logo start-->
       <a href="index.html" class="logo">Easy <span class="lite">Tax</span></a>
@@ -9,7 +9,7 @@
 
       <div class="nav search-row" id="top_menu">
 
-        <!--  search form start -->
+           <!-- search form start -->
         <ul class="nav top-menu">
           <li>
             <form class="navbar-form">
@@ -17,55 +17,24 @@
             </form>
           </li>
         </ul>
-        <!--  search form end -->
+              <!-- search form end  -->
       </div>
 
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
         <ul class="nav pull-right top-menu">
 
-          <!-- task notificatoin start -->
-          
-          <!-- task notificatoin end -->
-          <!-- inbox notificatoin start-->
-   
-          <!-- inbox notificatoin end -->
-          <!-- alert notification start-->
-          
-          <!-- alert notification end-->
-          <!-- user login dropdown start-->
+         
           <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="{{asset('img/avatar1_small.jpg')}}">
-                            </span>
-                            <span class="username">Admin</span>
-                            <b class="caret"></b>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                         </a>
-            <ul class="dropdown-menu extended logout">
-              <div class="log-arrow-up"></div>
-              <li class="eborder-top">
-                <a href="#"><i class="icon_profile"></i> My Profile</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_chat_alt"></i> Chats</a>
-              </li>
-              <li>
-                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
-              </li>
-              <li>
-                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-              </li>
-              <li>
-                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-              </li>
-            </ul>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
           </li>
           <!-- user login dropdown end -->
         </ul>

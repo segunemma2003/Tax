@@ -1,9 +1,10 @@
 <?php
-
+use App\admin;
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+
+use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
@@ -19,10 +20,11 @@ class Admin
             if (!Auth::check()){
                 return redirect('/login');
             }else{
+                $user=Auth::user();
                 if ($user->isAdmin==1){
                 return $next($request);
                 }else{
-                    return redirect('/');
+                    return redirect('/admin.index');
                 }
             }
         

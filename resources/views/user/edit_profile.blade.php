@@ -1,109 +1,101 @@
 @extends('/layout.master')
-@section('title', 'Companies Profile')
+@section('title', 'Edit Companies Profile')
 @section('content')
 
-    <div class="panel-body">
+
+<section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-files-o"></i>Company Form Validation</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="{{URL('user/users_home')}}">Home</a></li>
+              <li><i class="icon_document_alt"></i>Form</li>
+              
+            </ol>
+          </div>
+        </div>
+        <!-- Form validations -->
+        <div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+            <header class="panel-heading">
+               Please Fill Correctly
+              </header>
+              <div class="panel-body">
                 <div class="form">
-                  <form class="form-validate form-horizontal" id="feedback_form" method="Post" action="">
+                  <form class="form-validate form-horizontal" id="feedback_form" method="Post" enctype="multipart/form-data">
                   @csrf
                   
                     <div class="form-group ">
                       <label for="cname" class="control-label col-lg-2">Company Name <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control" id="cname" name="fullname" minlength="5" type="text" required />
+                      <div class="col-lg-8">
+                        <input class="form-control"  name="company_name" type="text" value="{{ $profile->company_name}}" required />
                       </div>
                     </div>
                     
+                    
                     <div class="form-group ">
                       <label for="cname" class="control-label col-lg-2">Company Address <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control" id="caddres" name="address" minlength="5" type="text" required />
+                      <div class="col-lg-8">
+                        <input class="form-control" id="caddres" name="company_address" type="text" value="{{$profile->company_address}}"  required />
                       </div>
                     </div>
 
                     <div class="form-group ">
                       <label for="cemail" class="control-label col-lg-2">Company E-Mail <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="cemail" type="email" name="email" required />
+                      <div class="col-lg-8">
+                        <input class="form-control " id="cemail" type="company_email" name="email" value="{{$profile->email}}"  required />
                       </div>
                     </div>
                     <div class="form-group ">
                       <label for="curl" class="control-label col-lg-2">Website</label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="curl" type="url" name="url" />
+                      <div class="col-lg-8">
+                        <input class="form-control " id="curl" type="url" name="website"  value="{{$profile->website}}" />
                       </div>
                     </div>
                     <div class="form-group ">
                       <label for="cname" class="control-label col-lg-2">Bank Name<span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control" id="subject" name="subject" minlength="5" type="text" required />
+                      <div class="col-lg-8">
+                        <input class="form-control" id="subject" name="bank_name"  type="text" required value="{{$profile->bank_name}}"  />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="cname" class="control-label col-lg-2">Account Number <span class="required">*</span></label>
+                      <div class="col-lg-8">
+                        <input class="form-control" id="caddres" name="account_number"  type="number" value="{{$profile->account_number}}"  required />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="cnumber" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
+                      <div class="col-lg-8">
+                        <input class="form-control" id="cnumber" name="phone_no" type="text" value="{{$profile->phone_no}}"  required />
                       </div>
                     </div>
                     <div class="form-group ">
                       <label for="ccomment" class="control-label col-lg-2">Feedback</label>
-                      <div class="col-lg-10">
-                        <textarea class="form-control " id="ccomment" name="comment" required></textarea>
+                      <div class="col-lg-8">
+                        <textarea class="form-control " id="ccomment" name="feedback" value="{{$profile->feedback}}" ></textarea>
                       </div>
                     </div>
 
-                    <div class="form-group">
+                    </div>
+                    <div class="form-group mt-4">
+                      <label for="image" class="mt-4"></label>
+                      <input type="file"  name="images" value="{{$profile->images}}" >         
+                    </div>
+                    <div class="form-group mt-5">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary mr-3" type="submit">Save</button>
-                        <button class="btn btn-default" type="button">Cancel</button>
+                        <button class="btn btn-primary mr-4" type="submit">Cancel</button>
+                        <a href="" class="btn btn-primary ml-4" role="button">Update Profile</a>
                       </div>
                     </div>
+                    
+
+                    
                   </form>
                 </div>
 
-              </div>
-            </section>
-          </div>
-        </div>
-        <!--code for Personal Inormation-->
-        <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-               Personal Information
-              </header>
-              <div class="panel-body">
-                <div class="form">
-                  <form class="form-validate form-horizontal " id="register_form" method="get" action="">
-                    <div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">Full name <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="fullname" type="text" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="address" class="control-label col-lg-2">Home Address <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="address" name="address" type="text" />
-                      </div>
-                    </div>
-                    
-                    
-                    <div class="form-group ">
-                      <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="email" name="email" type="email" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy <span class="required">*</span></label>
-                      <div class="col-lg-10 col-sm-9">
-                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-lg-offset-2 col-lg-10">
-                        <a href="" class="btn btn-primary mr-4" role="button">Edit Profile</a>
-                        <button class="btn btn-primary mr-4" type="submit">Submit</button>
-                        <button class="btn btn-default" type="button">Cancel</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
               </div>
             </section>
           </div>
@@ -112,6 +104,7 @@
         <!-- page end-->
       </section>
     </section>
+
 
 
 

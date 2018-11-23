@@ -15,11 +15,16 @@ class CreateTableProfile extends Migration
     {
         Schema::create('profile', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('Website');
-            $table->string('Bank Name');
-            $table->string('Account Number')->unique();
-            $table->string('Phone Number');
-            $table->text('Feedback');
+            $table->integer('user_id');
+            $table->string('company_name');
+            $table->text('company_address');
+            $table->string('phone_no');
+            $table->text('email');
+            $table->text('website')->nullable();
+            $table->text('bank_name');
+            $table->string('account_number')->unique();
+            $table->text('feedback')->nullable();
+            $table->string('images')->nullable();
             $table->timestamps();
         });
     }
@@ -32,5 +37,6 @@ class CreateTableProfile extends Migration
     public function down()
     {
         Schema::dropIfExists('profile');
+    
     }
 }

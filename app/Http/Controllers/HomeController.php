@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+use User;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return redirect()->route('users');
     }
 }

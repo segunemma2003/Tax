@@ -74,7 +74,7 @@
   <script src="{{asset('assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js')}}"></script>
   <script src="{{asset('js/owl.carousel.js')}}"></script>
   <!-- jQuery full calendar -->
-  <<script src="{{asset('js/fullcalendar.min.js')}}"></script>
+  <script src="{{asset('js/fullcalendar.min.js')}}"></script>
     <!-- Full Google Calendar - Calendar -->
     <script src="{{asset('assets/fullcalendar/fullcalendar/fullcalendar.js')}}"></script>
     <!--script for this page only-->

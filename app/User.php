@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','company_name','company_address','phone_no', 'password',
+        'name', 'email','phone_no', 'password',
     ];
     protected $table='users';
 
@@ -28,4 +29,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function profile()
+    {
+        return $this->hasOne('App\Profile','user_id');
+    }
+
+
 }

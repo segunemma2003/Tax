@@ -17,8 +17,8 @@ class CreateTableUsers extends Migration
             $table->tinyInteger('isAdmin')->default(0);
             $table->increments('id');
             $table->string('name');
-            $table->string('company_name')->nullable();
-            $table->string('company_address')->nullable();
+            //$table->string('company_name')->nullable();
+           // $table->string('company_address')->nullable();
             $table->string('phone_no')->nullable();
             $table->string('email')->unique();
             $table->string('password');

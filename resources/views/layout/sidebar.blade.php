@@ -4,61 +4,27 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="{{URL('pages/index')}}">
+            <a class="" href="{{URL('user/users_home')}}">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>User Dashboard</span>
                       </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
-                          <span>Forms</span>
+                          <span>Profile</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="{{URL('pages/form_component')}}">Form Elements</a></li>
-              <li><a class="" href="{{URL('pages/form_validation')}}">Form Validation</a></li>
+              <li><a class="" href="">Edit Profile</a></li>
+              <li><a class="" href="{{URL('/user/payment')}}">Pay Tax</a></li>
             </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="{{URL('/pages/general')}}">Elements</a></li>
-              <li><a class="" href="{{URL('/pages/buttons')}}">Buttons</a></li>
-              <li><a class="" href="{{URL('/pages/grids')}}">Grids</a></li>
-            </ul>
-          </li>
-          <li>
-            <a class="" href="{{URL('pages/widgets')}}">
-                          <i class="icon_genius"></i>
-                          <span>Widgets</span>
-                      </a>
-          </li>
-          <li>
-            <a class="" href="{{URL('pages/chart-chartjs')}}">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
+              
+            
 
-                      </a>
 
-          </li>
-
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_table"></i>
-                          <span>Tables</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="{{URL('pages/basic_table')}}">Basic Table</a></li>
-            </ul>
-          </li>
-
-          <li class="sub-menu">
+        
+          <!-- <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_documents_alt"></i>
                           <span>Pages</span>
@@ -71,7 +37,7 @@
               <li><a class="" href="{{URL('/pages/blank')}}">Blank Page</a></li>
               <li><a class="" href="/pages/404">404 Error</a></li>
             </ul>
-          </li>
+          </li> -->
 
         </ul>
         <!-- sidebar menu end-->
