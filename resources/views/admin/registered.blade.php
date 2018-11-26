@@ -2,6 +2,17 @@
 @section('title', 'Companies Profile')
 @section('content')
 
+<section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-files-o"></i>Registered Companies</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="{{URL('user/users_home')}}">Home</a></li>
+              <li><i class="icon_document_alt"></i>Form</li>      
+            </ol>
+          </div>
+        </div>
 
 <table class="table table-responsive">
     <thead>
@@ -17,21 +28,21 @@
         </tr>
     </thead>
     <tbody>
-    @foreach ($users as user)
+    @foreach ($profiles as $profile)
         <tr>
             <td>{{$loop->index+1}}</td>
-            <td>{{$user->profile->user_id}}</td>
-            <td>{{$user->profile->company_name}}</td>
-            <td>{{$user->profile->company_address}}</td>
-            <td>{{$user->profile->email}}</td>
-            <td>{{$user->profile->website}}</td>
-            <td>{{$user>profile->bank_name}}</td>
-            <td>{{$user->profile->account_name}}</td>
-            <td>{{$user->profile->phone_no}}</td>
-            <td>{{$user->profile->feedback}}</td>
-            <td>{{$user>profile->images}}</td>
+            <td>{{$profile->profile->company_name}}</td>
+            <td>{{$profile->profile->company_address}}</td>
+            <td>{{$profile->profile->website}}</td>
+            <td>{{$profile->profile->bank_name}}</td>
+            <td>{{$profile->profile->account_name}}</td>
+            <td>{{$profile->profile->phone_no}}</td>
+            <td>{{$profile->profile->feedback}}</td>
+            <td>{{$profile->profile->images}}</td>
         </tr>
+    @endforeach
     </tbody>
 </table>
-
 @endsection
+    </section>
+</section>

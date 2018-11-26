@@ -12,8 +12,8 @@ use App\Http\Requests\ProfileRequest;
 class VerificationController extends Controller
 {
     public function index(){
-        // $id= Auth::user()->id;
-        $users=User::all();
-        return view('admin.registered', compact('users'));
+        $id= Auth::user()->id;
+        $profiles=User::has('profile')->get();
+            return view('admin.registered', compact('profiles'));
     }
 }

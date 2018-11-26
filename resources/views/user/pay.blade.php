@@ -57,12 +57,12 @@
               <!-- <input type="form-control" style="width:70%;" name="quantity" value=""> -->
               </div>
             </div>
-            <div class="form-group ">
+            <!-- <div class="form-group ">
               <label for="cname" class="control-label col-lg-2">Metadata <span class="required">*</span></label>
               <div class="col-lg-8">
-              <input type="form-control" style="width:70%;" name="metadata" value="">
+              <input type="hidden" style="width:70%;" name="metadata" value="tax">
               </div>
-            </div>
+            </div> -->
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             <!-- {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}} -->
